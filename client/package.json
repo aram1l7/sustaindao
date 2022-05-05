@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/dellaert/gh-pages-jekyll-react/issues"
   },
-  "homepage": "https://github.com/dellaert/gh-pages-jekyll-react#readme",
+  "homepage": "https://sustaindao-node.vercel.app/",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
