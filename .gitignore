@@ -1,0 +1,11 @@
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+.env
+node_modules/
+client/build/*.js
+client/build/yarn.lock
+client/build/node-backend
+client/build/package.json
+client/build/README.md
