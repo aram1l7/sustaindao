@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "routes": [
-    { "src":
+  "rewrites": [
+    { "source":
       "/api/tweets", 
-      "dest": "/api/twitter.js" },
-    { "src": "/api/twitter/sustaindao", 
-      "dest": "/api/twitter.js" 
+      "destination": "/api/twitter" },
+    { "source": "/api/twitter/sustaindao", 
+      "destination": "/api/twitter" 
     }
   ]
 }
