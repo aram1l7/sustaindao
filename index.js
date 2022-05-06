@@ -4,7 +4,8 @@ const path = require('path');
 require('dotenv').config()
 const app = express()
 app.use(cors());
-const twitter = require('./api/twitter');
+const tweets = require('./api/tweets');
+const user = require('./api/user')
 const PORT = process.env.PORT || 4000
 let origin = '*'
 app.use(function(req,res,next){
@@ -14,8 +15,8 @@ app.use(function(req,res,next){
     next()
 })
 
-app.use('/api', twitter)
-
+app.use('/api/tweets', tweets)
+app.use('/api/twitter/sustaindao', user)
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname, "./client/_build")));
 app.get("/", (req, res) => {

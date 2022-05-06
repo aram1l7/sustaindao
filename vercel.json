@@ -3,9 +3,9 @@
   "rewrites": [
     { "source":
       "/api/tweets", 
-      "destination": "/api/twitter" },
+      "destination": "/api/tweets" },
     { "source": "/api/twitter/sustaindao", 
-      "destination": "/api/twitter" 
+      "destination": "/api/user" 
     }
   ]
 }
