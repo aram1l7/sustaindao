@@ -11,8 +11,8 @@ function urlify(text) {
 const saveData = async () => {
     try {
         const res = await Promise.all([
-            axios.get('http://localhost:4000/twitter/sustaindao'),
-            axios.get('http://localhost:4000/tweets'),
+            axios.get('/twitter/sustaindao'),
+            axios.get('/tweets'),
         ]);
         let userInfo = res[0].data;
         let tweets = res[1].data
