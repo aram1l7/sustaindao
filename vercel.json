@@ -2,10 +2,7 @@
   "version": 2,
   "rewrites": [
     { "source":
-      "/api/tweets", 
-      "destination": "/api/twitter" },
-    { "source": "/api/twitter/sustaindao", 
-      "destination": "/api/twitter" 
-    }
+      "/api/(.*)", 
+      "destination": "./index.js" }
   ]
 }
