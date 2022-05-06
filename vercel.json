@@ -1,4 +1,11 @@
 {
   "version": 2,
-  "routes": [{ "src": "/(.*)", "dest": "/" }]
+  "routes": [
+    { "src":
+      "/tweets", 
+      "dest": "/" },
+    { "src": "/twitter/sustaindao", 
+      "dest": "/" 
+    }
+  ]
 }
