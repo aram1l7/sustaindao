@@ -1,4 +1,3 @@
-const axios = require('axios');
 const express = require('express')
 const cors = require('cors')
 const path = require('path');
@@ -7,7 +6,7 @@ const app = express()
 app.use(cors());
 
 const PORT = process.env.PORT || 4000
-
+const twitterroutes = require('./api/twitter')
 let origin = '*'
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin', origin)
@@ -15,6 +14,8 @@ app.use(function(req,res,next){
     res.header('Access-Control-Allow-Credentials', 'true')
     next()
 })
+
+app.use('/api', twitterroutes)
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname, "./client/_build")));
@@ -26,39 +27,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get('/twitter/sustaindao', async (req,res) =>  {
-    const options = {
-        headers:{
-            Authorization:`Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
-        }
-    }
-    try {
-        const response = await axios.get("https://api.twitter.com/2/users/1504551646608728064?user.fields=name,username,profile_image_url", options)
-        if(response){
-            return res.json(response.data.data)
-        }
-    } catch(error){
-        console.log(error)
-    }
-})
 
-
-app.get('/tweets', async (req,res) =>  {
-    const options = {
-        headers:{
-            Authorization:`Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
-        }
-    }
-    try { 
-        const response = await axios.get("https://api.twitter.com/2/users/1504551646608728064/tweets?max_results=5&tweet.fields=created_at,text,public_metrics", options)
-        if(response){
-            return res.json(response.data.data)
-        }
-    } catch(error){
-        console.log(error)
-    }
-
-})
 app.listen(PORT)
 
 module.exports = app;

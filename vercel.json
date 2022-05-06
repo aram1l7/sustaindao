@@ -2,10 +2,10 @@
   "version": 2,
   "routes": [
     { "src":
-      "/tweets", 
-      "dest": "/" },
-    { "src": "/twitter/sustaindao", 
-      "dest": "/" 
+      "/api/tweets", 
+      "dest": "/api/twitter.js" },
+    { "src": "/api/twitter/sustaindao", 
+      "dest": "/api/twitter.js" 
     }
   ]
 }
