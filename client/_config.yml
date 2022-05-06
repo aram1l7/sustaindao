@@ -28,7 +28,7 @@ sass:
 postcss:
   cache: false
 paginate: 12
-destination: build/
+destination: _build/
 paginate_path: "/articles/page/:num/"
 permalink: /:categories/:year/:month/:day/:title.html
 exclude: ['node_modules']
