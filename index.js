@@ -5,6 +5,9 @@ const path = require('path');
 require('dotenv').config()
 const app = express()
 app.use(cors());
+
+const PORT = process.env.PORT || 4000
+
 let origin = '*'
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin', origin)
@@ -56,6 +59,6 @@ app.get('/tweets', async (req,res) =>  {
     }
 
 })
-app.listen(4000)
+app.listen(PORT)
 
 module.exports = app;
