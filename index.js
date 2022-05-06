@@ -7,13 +7,13 @@ app.use(cors());
 
 const PORT = process.env.PORT || 4000
 const twitterroutes = require('./api/twitter')
-let origin = '*'
-app.use(function(req,res,next){
-    res.header('Access-Control-Allow-Origin', origin)
-    res.header('Access-Control-Allow-Headers',"Origin, X-Requested-With,Content-Type,Accept,Key,Access-Control-Allow-Headers,Cache-Control,Authorization")
-    res.header('Access-Control-Allow-Credentials', 'true')
-    next()
-})
+// let origin = '*'
+// app.use(function(req,res,next){
+//     res.header('Access-Control-Allow-Origin', origin)
+//     res.header('Access-Control-Allow-Headers',"Origin, X-Requested-With,Content-Type,Accept,Key,Access-Control-Allow-Headers,Cache-Control,Authorization")
+//     res.header('Access-Control-Allow-Credentials', 'true')
+//     next()
+// })
 
 app.use('/api', twitterroutes)
 
