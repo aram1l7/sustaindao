@@ -185,3 +185,12 @@
     @include graidentBorder(#2b2b2b);
   }
 }
+
+.group-1 {
+  transform-box: fill-box;
+  transform-origin: 200px 50px;
+  & > * {
+    transform-box: fill-box;
+    transform-origin: 200px 50px;
+  }
+}
