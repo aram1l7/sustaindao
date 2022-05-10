@@ -151,11 +151,23 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(el)
     });
 
+    var obj = document.querySelector(".img-object");
+    obj.addEventListener('load', () => {
+      let svg = obj.contentDocument.querySelector('#svg-anim');
+      if(svg){
+        svg.querySelectorAll('.group').forEach(group => {
+          group.querySelectorAll('path').forEach(p => {
+            p.style.transformOrigin = 'center !important';
+            p.style.transformBox = 'fill-box !important'
+            p.style.transition='0.5s ease !important'
+          })
+        })
+      }
+    })
     window.onscroll = () => {
-      let theta = window.scrollY / 4;
-      var obj = document.querySelector(".img-object");
       var svg = obj.contentDocument.querySelector("svg");
-      let groups = svg.querySelectorAll('.group')
+      let theta = window.scrollY / 4;
+      let groups = svg.querySelectorAll('.group');
       groups.forEach(group => {
         let paths = group.querySelectorAll('path');
         paths.forEach(path => {

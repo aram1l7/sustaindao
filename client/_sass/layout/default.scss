@@ -186,11 +186,12 @@
   }
 }
 
-.group-1 {
-  transform-box: fill-box;
-  transform-origin: 200px 50px;
-  & > * {
-    transform-box: fill-box;
-    transform-origin: 200px 50px;
-  }
+.group {
+  transform-box: fill-box !important;
+  transform-origin: center !important;
+}
+
+:not(svg){
+  transform-box: fill-box !important;
+  transform-origin: center !important;
 }
